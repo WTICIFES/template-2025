@@ -1,0 +1,165 @@
+% TEMPLATE DE ARTIGO CIENTÍFICO - WTICIFES 2025
+% Desenvolvido por Walfran Araújo - UNIFESP adaptado do modelo canônico para artigo científico - ABNT
+% Refatorado com IA Generativa
+% Créditos:
+% Modelo Canônico ABNT2 para artigo científico
+% Lauro Cesar Araujo 
+
+% ------------------------------------------------
+\documentclass[
+    12pt,
+    a4paper,
+    oneside,
+    brazil,
+    english
+]{article}
+
+% ---
+% Pacotes de fonte e codificação
+% ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage[scaled=.95]{helvet}
+
+% ---
+% Pacotes essenciais
+% ---
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{babel}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{eso-pic} 
+\usepackage[brazilian]{abntex2cite}
+
+% ---
+% Configurações de layout
+% ---
+\geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm}
+\setlength{\parindent}{1.5cm}
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{1.5cm}
+\renewcommand{\baselinestretch}{1.5}
+
+
+% ===== IMAGEM DE FUNDO EM TODAS AS PÁGINAS =====
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{background.png}%
+  }
+}
+
+
+% Citações e notas com espaçamento simples
+\renewenvironment{quote}
+   {\begin{singlespace}\fontsize{10}{12}\selectfont\begin{list}{}{\rightmargin=0cm \leftmargin=4cm}\item\relax}
+   {\end{list}\end{singlespace}}
+
+% ---
+% Tamanho de seções (títulos)
+% ---
+\setcounter{secnumdepth}{0}
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14}\bfseries\selectfont}
+  {}
+  {0pt}
+  {}
+  []
+\titlespacing*{\section}
+  {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% ---
+% Cabeçalho e rodapé
+% ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\fontsize{10}{12}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\AtBeginDocument{\thispagestyle{empty}}
+
+% ---
+% Notas de rodapé com espaçamento simples
+% ---
+\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{%
+  \begingroup\singlespacing
+  \oldfootnote{#1}%
+  \endgroup
+}
+
+% ---
+% Títulos e autores
+% ---
+\makeatletter
+
+% Redefinição do \maketitle
+\renewcommand{\maketitle}{%
+  \begin{center}
+    \fontsize{12}{14}\bfseries\selectfont
+    \@title
+  \end{center}
+  \vspace{0.5cm}
+  \begin{flushright}
+    Nome do Autor 1\textsuperscript{1} \\
+    Nome do Autor 2\textsuperscript{2} \\
+    Nome do Autor 3\textsuperscript{3}
+  \end{flushright}
+  \footnotetext[1]{autor1@email.com}
+  \footnotetext[2]{autor2@email.com}
+  \footnotetext[3]{autor3@email.com}
+  \vspace{1cm}
+}
+\makeatother
+
+
+% ------------------------------------------------
+% INÍCIO DO DOCUMENTO
+% ------------------------------------------------
+\begin{document}
+
+% Espaçamento 1,5 para o texto principal
+\onehalfspacing
+
+\title{TÍTULO DO DOCUMENTO}
+\maketitle
+
+\section{Introdução}
+Este é um modelo de documento que segue as especificações solicitadas. O texto está formatado com fonte tamanho 12, espaçamento entre linhas de 1,5 cm, sem espaçamento entre parágrafos.
+
+Exemplo de citação \cite{chiavenato2000}.
+
+Segundo \citeonline{chiavenato2000}.
+
+\lipsum[1]
+
+\section{Desenvolvimento}
+As seções estão alinhadas à esquerda e sem numeração, conforme solicitado nos requisitos.
+
+\lipsum[2]
+
+Abaixo segue um exemplo de citação longa, que deve ser formatada com recuo, espaçamento simples e fonte tamanho 10:
+
+\begin{quote}
+Esta é uma citação longa que deve ser formatada em espaço simples de entrelinhas e fonte tamanho 10. O texto está alinhado com recuo à esquerda para diferenciar do texto principal do documento, conforme as especificações solicitadas nos requisitos.
+\end{quote}
+
+\lipsum[3]
+
+\section{Considerações Finais}
+\lipsum[2]
+
+% Referências bibliográficas
+\bibliographystyle{abntex2-alf}  % Estilo autor-data da ABNT
+\bibliography{referencias}  % Arquivo .bib contendo as referências
+
+
+\end{document}
