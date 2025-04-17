@@ -20,62 +20,191 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-% \usepackage[scaled=.95]{helvet}
-
-% ---
-% Pacotes essenciais
-% ---
-\usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{color}
 \usepackage{setspace}
-\usepackage{geometry}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
-\usepackage{babel}
 \usepackage{indentfirst}
-\usepackage{hyperref}
-\usepackage{lipsum}
-\usepackage{eso-pic} 
-\usepackage[brazilian,alf]{abntex2cite}
+\usepackage{babel}
 
+% Configuração de fontes
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---
+% Pacotes para figuras e gráficos
+% ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+% ---
+% Diagramas/Fluxogramas
+% ---
+\usepackage{tikz}
+\usetikzlibrary{
+  shapes,
+  arrows,
+  fit,
+  shapes.geometric,
+  decorations.pathreplacing,
+  shapes.misc,
+  positioning,
+  chains
+}
+
+% ---
+% Listagem de código
+% ---
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinelanguage{AutoHotkey}{
+  morekeywords={
+    if, else, return, for, while, loop, break, continue, 
+    goto, gosub, global, local, static, 
+    Send, Sleep, MsgBox, SetTitleMatchMode, WinActivate, 
+    WinWaitActive, Gui, GuiControl, ControlGetFocus
+  },
+  sensitive=false,
+  morecomment=[l]{;},
+  morestring=[b]",
+  morestring=[b]',
+}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% ---
+% URLs e referências
+% ---
+\usepackage{url}
+\usepackage[brazilian,alf]{abntex2cite}
+\usepackage{hyperref}
 
 % ---
 % Configurações de layout
 % ---
+\usepackage{geometry}
 \geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{eso-pic}
+
+% Configurações de parágrafo
 \setlength{\parindent}{1.5cm}
 \setlength{\parskip}{0pt}
 \setlength{\baselineskip}{1.5cm}
 \renewcommand{\baselinestretch}{1.5}
 
-
-% ===== IMAGEM DE FUNDO EM TODAS AS PÁGINAS =====
+% ===== Imagem de fundo em todas as páginas =====
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
     \includegraphics[width=\paperwidth,height=\paperheight]{background.png}%
   }
 }
 
-
+% ---
 % Citações e notas com espaçamento simples
-\renewenvironment{quote}
-   {\begin{singlespace}\fontsize{10}{12}\selectfont\begin{list}{}{\rightmargin=0cm \leftmargin=4cm}\item\relax}
-   {\end{list}\end{singlespace}}
+% ---
+\renewenvironment{quote}{%
+  \begin{singlespace}%
+  \fontsize{10}{12}\selectfont%
+  \begin{list}{}{\rightmargin=0cm \leftmargin=4cm}%
+  \item\relax%
+}{%
+  \end{list}%
+  \end{singlespace}%
+}
 
 % ---
-% Tamanho de seções (títulos)
+% Configuração de seções (títulos)
 % ---
-\setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{2}
 \titleformat{\section}
   {\normalfont\fontsize{12}{14}\bfseries\selectfont}
-  {}
+  {\thesection. }
   {0pt}
   {}
   []
+
 \titlespacing*{\section}
   {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14}\bfseries\selectfont}
+  {\thesubsection. }
+  {0pt}
+  {}
+  []
+
+% --- 
+% Configuração do título e subtítulo
+% ---
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{center}%
+    {\fontsize{12}{14}\selectfont\bfseries\@title\par}%
+    \vskip 1em%
+    {\fontsize{12}{14}\selectfont\@author\par}%
+    \vskip 1em%
+    {\fontsize{12}{14}\selectfont\@date\par}%
+  \end{center}%
+}
+\makeatother
+
+% --- 
+% Resumo e Abstract
+% ---
+\renewenvironment{resumo}{%
+  \noindent\fontsize{12}{14}\sffamily\bfseries Resumo\\%
+  \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
+}{%
+  \par\setlength{\parindent}{1.5cm}%
+}
+
+\renewenvironment{abstract}{%
+  \noindent\fontsize{12}{14}\sffamily\bfseries Abstract\\%
+  \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
+}{%
+  \par\setlength{\parindent}{1.5cm}%
+}
+
+% ---
+% Ambientes para palavras-chave
+% ---
+\newenvironment{keywords}{%
+  \par\noindent\textbf{Keywords:}~%
+}{%
+  \par%
+}
+
+\newenvironment{palavraschave}{%
+  \par\noindent\textbf{Palavras-chave:}~%
+}{%
+  \par%
+}
 
 % ---
 % Cabeçalho e rodapé
@@ -97,11 +226,11 @@
   \endgroup
 }
 
+
 % ---
 % Títulos e autores
 % ---
 \makeatletter
-
 % Redefinição do \maketitle
 \renewcommand{\maketitle}{%
   \begin{center}
@@ -132,6 +261,22 @@
 
 \title{TÍTULO DO DOCUMENTO}
 \maketitle
+
+
+\begin{resumo}
+\lipsum[1]
+\end{resumo}
+
+\noindent\textbf{Palavras-chave:} key1, key2, key3
+
+\vspace{0.5cm}
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\noindent\textbf{Keywords:} key1, key2, key3
+
+
 
 \section{Introdução}
 Este é um modelo de documento que segue as especificações solicitadas. O texto está formatado com fonte tamanho 12, espaçamento entre linhas de 1,5 cm, sem espaçamento entre parágrafos.
