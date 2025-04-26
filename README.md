@@ -9,7 +9,7 @@ O template foi adaptado do modelo canônico para artigo científico da ABNT (Ass
 ## Estrutura do Projeto
 
 - `main.tex`: Arquivo principal do template LaTeX
-- `referencias.bib`: Arquivo BibTeX contendo as referências bibliográficas
+- `ref.bib`: Arquivo BibTeX contendo as referências bibliográficas
 - `background.png`: Imagem de fundo utilizada em todas as páginas do documento
 
 ## Características 
@@ -22,17 +22,17 @@ O template foi adaptado do modelo canônico para artigo científico da ABNT (Ass
 - Suporte para múltiplos autores com notas de rodapé para e-mails
 - Imagem de fundo personalizada em todas as páginas
 
-## Como Usar
+## Como usar
 
-1. Clone ou faça download deste repositório
-2. Edite o arquivo `main.tex` com o conteúdo do seu artigo:
-   - Altere o título em `\title{TÍTULO DO DOCUMENTO}`
-   - Substitua os nomes dos autores e e-mails na seção de título
-   - Preencha as seções com o conteúdo do seu artigo
-3. Adicione suas referências bibliográficas ao arquivo `referencias.bib`
-4. Compile o documento usando um compilador LaTeX (como pdfLaTeX) ou importa para o Overleaf.
+- Clone ou faça download deste repositório
+- Edite o arquivo `main.tex` com o conteúdo do seu artigo:
+  - Altere o título em `\title{TÍTULO DO DOCUMENTO}`
+  - Substitua os nomes dos autores e e-mails na seção de título
+  - Preencha as seções com o conteúdo do seu artigo
+- Adicione suas referências bibliográficas ao arquivo `ref.bib`
+- Compile o documento usando um compilador LaTeX (como pdfLaTeX) ou importe para o Overleaf.
 
-## Exemplos de Uso
+## Exemplos de uso
 
 ### Citações
 
@@ -49,6 +49,19 @@ Esta é uma citação longa que deve ser formatada em espaço simples de entreli
 \end{quote}
 ```
 
+## Referências bibliográficas
+
+As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o padrão BibTeX. Exemplo:
+
+```bibtex
+@book{chiavenato2000,
+  author    = {Idalberto Chiavenato},
+  title     = {Introdução à Teoria Geral da Administração},
+  year      = {2000},
+  publisher = {Elsevier}
+}
+```
+
 ## Contribuições 
 
 - **Pull Requests**: Contribua com melhorias através de pull requests. Certifique-se de documentar as alterações propostas.
@@ -57,9 +70,15 @@ Esta é uma citação longa que deve ser formatada em espaço simples de entreli
 
 ## Créditos
 
-- Walfran Araújo (UNIFESP) - Adaptação para WTICIFES 2025
-- Alexsandro Cardoso Carvalho (UNIFESP) - Organização
-- Lauro Cesar Araujo - Modelo Canônico ABNT2 para artigo científico
+- **Walfran Araújo** (UNIFESP) – Adaptação para WTICIFES 2025
+- **Alexsandro Cardoso Carvalho** (UNIFESP) – Organização
+- Modelo Canônico ABNT2 para artigo científico
+
+## Histórico de alterações
+### 25/04/2025
+- Correção de referências bibliográficas
+- Remoção da numeração de section e subsection
+- Nomes dos autores em negrito
 
 ## Licença
 

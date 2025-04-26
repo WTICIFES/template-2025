@@ -4,14 +4,13 @@
 % Créditos:
 % Modelo Canônico ABNT2 para artigo científico
 % Lauro Cesar Araujo 
-
 % ------------------------------------------------
 \documentclass[
     12pt,
     a4paper,
-    oneside,
-    brazil,
-    english
+    oneside,    
+    english,
+    brazil
 ]{article}
 
 % ---
@@ -24,10 +23,23 @@
 \usepackage{color}
 \usepackage{setspace}
 \usepackage{indentfirst}
-\usepackage{babel}
+\usepackage[english,brazil]{babel}
 
 % Configuração de fontes
 \renewcommand{\familydefault}{\sfdefault}
+
+% ---
+% URLs 
+% ---
+\usepackage{url}
+\usepackage{hyperref}
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,alf]{abntex2cite}
+% ---
+
 
 % ---
 % Pacotes para figuras e gráficos
@@ -95,12 +107,6 @@
 
 \lstset{style=mystyle}
 
-% ---
-% URLs e referências
-% ---
-\usepackage{url}
-\usepackage[brazilian,alf]{abntex2cite}
-\usepackage{hyperref}
 
 % ---
 % Configurações de layout
@@ -144,7 +150,8 @@
 \setcounter{secnumdepth}{2}
 \titleformat{\section}
   {\normalfont\fontsize{12}{14}\bfseries\selectfont}
-  {\thesection. }
+  % {\thesection. } %remove numeração da section 
+  {}
   {0pt}
   {}
   []
@@ -154,7 +161,8 @@
 
 \titleformat{\subsection}
   {\normalfont\fontsize{12}{14}\bfseries\selectfont}
-  {\thesubsection. }
+  % {\thesubsection. } %remove numeração da section 
+  {}
   {0pt}
   {}
   []
@@ -174,10 +182,11 @@
 }
 \makeatother
 
+
 % --- 
 % Resumo e Abstract
 % ---
-\renewenvironment{resumo}{%
+\newenvironment{resumo}{%
   \noindent\fontsize{12}{14}\sffamily\bfseries Resumo\\%
   \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
 }{%
@@ -239,9 +248,9 @@
   \end{center}
   \vspace{0.5cm}
   \begin{flushright}
-    Nome do Autor 1\textsuperscript{1} \\
-    Nome do Autor 2\textsuperscript{2} \\
-    Nome do Autor 3\textsuperscript{3}
+    \textbf{Nome do Autor 1}\textsuperscript{1} \\
+    \textbf{Nome do Autor 2}\textsuperscript{2} \\
+    \textbf{Nome do Autor 3}\textsuperscript{3}
   \end{flushright}
   \footnotetext[1]{autor1@email.com}
   \footnotetext[2]{autor2@email.com}
@@ -276,21 +285,18 @@
 
 \noindent\textbf{Keywords:} key1, key2, key3
 
-
-
 \section{Introdução}
-Este é um modelo de documento que segue as especificações solicitadas. O texto está formatado com fonte tamanho 12, espaçamento entre linhas de 1,5 cm, sem espaçamento entre parágrafos.
+Este é um modelo de documento que segue as especificações solicitadas. O texto está formatado com fonte tamanho 12, espaçamento entre linhas de 1,5 cm, sem espaçamento entre parágrafos. Exemplo de citação \cite{teste2023}.
 
-Exemplo de citação \cite{chiavenato2000}.
-
-Segundo \citeonline{chiavenato2000}.
+Segundo \citeonline{fowler1997}.
 
 \lipsum[1]
 
 \section{Desenvolvimento}
-As seções estão alinhadas à esquerda e sem numeração, conforme solicitado nos requisitos.
+As seções estão alinhadas à esquerda e sem numeração, conforme solicitado
+nos requisitos.
 
-\lipsum[2]
+\lipsum[1]
 
 Abaixo segue um exemplo de citação longa, que deve ser formatada com recuo, espaçamento simples e fonte tamanho 10:
 
@@ -305,7 +311,7 @@ Esta é uma citação longa que deve ser formatada em espaço simples de entreli
 
 % Referências bibliográficas
 \bibliographystyle{abntex2-alf}  % Estilo autor-data da ABNT
-\bibliography{referencias}  % Arquivo .bib contendo as referências
+\bibliography{ref}  % Arquivo .bib contendo as referências
 
 
 \end{document}
