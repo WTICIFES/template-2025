@@ -64,6 +64,7 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 
 ## Histórico de alterações
 ### 25/04/2025
+- Adição da classe wticifes.cls
 - Remoção da numeração das páginas
 - Correção de referências bibliográficas
 - Remoção da numeração de section e subsection
