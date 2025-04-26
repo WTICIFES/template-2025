@@ -62,6 +62,13 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 }
 ```
 
+## Histórico de alterações
+### 25/04/2025
+- Remoção da numeração das páginas
+- Correção de referências bibliográficas
+- Remoção da numeração de section e subsection
+- Nomes dos autores em negrito
+
 ## Contribuições 
 
 - **Pull Requests**: Contribua com melhorias através de pull requests. Certifique-se de documentar as alterações propostas.
@@ -74,11 +81,6 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 - **Alexsandro Cardoso Carvalho** (UNIFESP) – Organização
 - Modelo Canônico ABNT2 para artigo científico
 
-## Histórico de alterações
-### 25/04/2025
-- Correção de referências bibliográficas
-- Remoção da numeração de section e subsection
-- Nomes dos autores em negrito
 
 ## Licença
 
