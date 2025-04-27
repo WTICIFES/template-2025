@@ -23,7 +23,6 @@
 \RequirePackage{helvet}
 \RequirePackage{microtype}
 \RequirePackage{color}
-\RequirePackage{setspace}
 \RequirePackage{indentfirst}
 \RequirePackage[english,brazil]{babel}
 
@@ -242,5 +241,5 @@
 
 % Configuração padrão para o documento
 \AtBeginDocument{
-  \onehalfspacing % Espaçamento 1,5 para o texto principal
+  \OnehalfSpacing % Espaçamento 1,5 para o texto principal
 }
