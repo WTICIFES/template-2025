@@ -189,7 +189,7 @@
 % --- 
 % Resumo e Abstract
 % ---
-\newenvironment{resumo}{%
+\renewenvironment{resumo}{%
   \noindent\fontsize{12}{14}\sffamily\bfseries Resumo\\%
   \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
 }{%
