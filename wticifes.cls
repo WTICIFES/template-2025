@@ -9,11 +9,11 @@
 \ProvidesClass{wticifes2025}[2025/04/25 Template para artigos do WTICIFES 2025]
 
 % Opções da classe
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
 \ProcessOptions\relax
 
 % Carrega a classe base
-\LoadClass[12pt,a4paper,oneside]{article}
+\LoadClass[12pt,a4paper,oneside]{abntex2}
 
 % ---
 % Pacotes de fonte e codificação
