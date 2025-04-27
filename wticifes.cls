@@ -23,6 +23,7 @@
 \RequirePackage{helvet}
 \RequirePackage{microtype}
 \RequirePackage{color}
+\RequirePackage{setspace}
 \RequirePackage{indentfirst}
 \RequirePackage[english,brazil]{babel}
 
@@ -240,4 +241,6 @@
 \renewcommand{\refname}{Referências}
 
 % Configuração padrão para o documento
-\OnehalfSpacing
+\AtBeginDocument{
+  \onehalfspacing % Espaçamento 1,5 para o texto principal
+}
