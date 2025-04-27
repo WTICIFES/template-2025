@@ -126,7 +126,7 @@
 % ===== Imagem de fundo em todas as páginas =====
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
-    \includegraphics[width=\paperwidth,height=\paperheight]{background.png}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{img/background.png}%
   }
 }
 
