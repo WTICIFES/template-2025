@@ -111,7 +111,6 @@
 % ---
 \RequirePackage{geometry}
 \geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm}
-\RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{lipsum}
 \RequirePackage{eso-pic}
@@ -220,10 +219,28 @@
 % ---
 % Cabeçalho e rodapé
 % ---
-\pagestyle{empty} % Remove a numeração das páginas
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
 \fancyhf{}
+\fancyhead[R]{\fontsize{10}{12}\selectfont\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\AtBeginDocument{\thispagestyle{empty}}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% --- Automático para iniciar numeração de página (equivalente a \textual) ---
+\RequirePackage{etoolbox} 
+\newbool{abntex@textual@foi chamado}
+\boolfalse{abntex@textual@foi chamado}
+\newcommand{\abntex@chamartextualsepreciso}{%
+  \ifbool{abntex@textual@foi chamado}{}{
+    \pagestyle{fancy}
+    \global\booltrue{abntex@textual@foi chamado}
+  }%
+}
+
+\pretocmd{\section}{\abntex@chamartextualsepreciso}{}{\ClassError{wticifes2025}{Falha ao modificar \string\section}{}}
 
 % ---
 % Notas de rodapé com espaçamento simples
