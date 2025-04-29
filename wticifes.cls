@@ -9,11 +9,11 @@
 \ProvidesClass{wticifes2025}[2025/04/25 Template para artigos do WTICIFES 2025]
 
 % Opções da classe
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
 \ProcessOptions\relax
 
 % Carrega a classe base
-\LoadClass[12pt,a4paper,oneside]{article}
+\LoadClass[12pt,a4paper,oneside]{abntex2}
 
 % ---
 % Pacotes de fonte e codificação
@@ -23,7 +23,6 @@
 \RequirePackage{helvet}
 \RequirePackage{microtype}
 \RequirePackage{color}
-\RequirePackage{setspace}
 \RequirePackage{indentfirst}
 \RequirePackage[english,brazil]{babel}
 
@@ -112,7 +111,6 @@
 % ---
 \RequirePackage{geometry}
 \geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm}
-\RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{lipsum}
 \RequirePackage{eso-pic}
@@ -126,7 +124,7 @@
 % ===== Imagem de fundo em todas as páginas =====
 \AddToShipoutPictureBG{%
   \AtPageLowerLeft{%
-    \includegraphics[width=\paperwidth,height=\paperheight]{background.png}%
+    \includegraphics[width=\paperwidth,height=\paperheight]{img/background.png}%
   }
 }
 
@@ -189,7 +187,7 @@
 % --- 
 % Resumo e Abstract
 % ---
-\newenvironment{resumo}{%
+\renewenvironment{resumo}{%
   \noindent\fontsize{12}{14}\sffamily\bfseries Resumo\\%
   \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
 }{%
@@ -221,10 +219,28 @@
 % ---
 % Cabeçalho e rodapé
 % ---
-\pagestyle{empty} % Remove a numeração das páginas
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
 \fancyhf{}
+\fancyhead[R]{\fontsize{10}{12}\selectfont\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\AtBeginDocument{\thispagestyle{empty}}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% --- Automático para iniciar numeração de página (equivalente a \textual) ---
+\RequirePackage{etoolbox} 
+\newbool{abntex@textual@foi chamado}
+\boolfalse{abntex@textual@foi chamado}
+\newcommand{\abntex@chamartextualsepreciso}{%
+  \ifbool{abntex@textual@foi chamado}{}{
+    \pagestyle{fancy}
+    \global\booltrue{abntex@textual@foi chamado}
+  }%
+}
+
+\pretocmd{\section}{\abntex@chamartextualsepreciso}{}{\ClassError{wticifes2025}{Falha ao modificar \string\section}{}}
 
 % ---
 % Notas de rodapé com espaçamento simples
@@ -242,5 +258,5 @@
 
 % Configuração padrão para o documento
 \AtBeginDocument{
-  \onehalfspacing % Espaçamento 1,5 para o texto principal
+  \OnehalfSpacing % Espaçamento 1,5 para o texto principal
 }
