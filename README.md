@@ -8,9 +8,10 @@ O template foi adaptado do modelo canônico para artigo científico da ABNT (Ass
 
 ## Estrutura do Projeto
 
-- `main.tex`: Arquivo principal do template LaTeX
+- `main.tex`: Arquivo principal, onde deve escarver seu artigo
 - `ref.bib`: Arquivo BibTeX contendo as referências bibliográficas
 - `background.png`: Imagem de fundo utilizada em todas as páginas do documento
+- `wticifes2025.cls`: O template em si
 
 ## Características 
 > As recomendações do Comitê de Comunicação Científica do WTICIFES 2025 estão disponíveis em https://wticifes.com.br/2025/submissao-trabalhos/
@@ -70,16 +71,31 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 - Remoção da numeração de section e subsection
 - Nomes dos autores em negrito
 
+### 26/04/2025
+- Correção do formato das citações usando o pacote abntex2
+- Organização de imagens em pasta separada
+
+### 10/07/2025
+- Dados dos autores no main.tex
+- Dicas de compilação
+
 ## Contribuições 
 
-- **Pull Requests**: Contribua com melhorias através de pull requests. Certifique-se de documentar as alterações propostas.
+### Pull Requests
 
-- **Compatibilidade**:O  template foi criado usando Overleaf e testado usando editor TexStudio - https://www.texstudio.org/.
+Contribua com melhorias através de pull requests. Certifique-se de documentar as alterações propostas.
+
+### Compatibilidade
+
+O template foi criado usando Overleaf, usando o compilador LuaLaTeX, e testado usando editor TexStudio - https://www.texstudio.org/. 
+
+Dependendo do compilador usado pode ser necessária a instalação do pacote abntex2 em separado.
 
 ## Créditos
 
 - **Walfran Araújo** (UNIFESP) – Adaptação para WTICIFES 2025
 - **Alexsandro Cardoso Carvalho** (UNIFESP) – Organização
+- **André de Freitas Smaira** (UFSCar) - Detalhes finais
 - Modelo Canônico ABNT2 para artigo científico
 
 

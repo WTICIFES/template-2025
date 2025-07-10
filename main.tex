@@ -1,4 +1,4 @@
-\documentclass{wticifes}
+\documentclass{wticifes2025}
 
 % ------------------------------------------------
 % INÍCIO DO DOCUMENTO
@@ -10,20 +10,30 @@
 
 \title{TÍTULO DO DOCUMENTO}
 \maketitle
+{Nome Autor 1}{Filiação Autor 1. \url{link lattes autor 1}. E-mail: \url{e-mail autor 1}}
+{Nome Autor 2}{Filiação Autor 2. \url{link lattes autor 2}. E-mail: \url{e-mail autor 2}}
+{Nome Autor 3}{Filiação Autor 3. \url{link lattes autor 3}. E-mail: \url{e-mail autor 3}}
+% Para número diferente de autores (mais ou menos), editar
+% o arquivo wticifes2025.cls, em todos os locais onde está
+% indicado "TODO: automatizar"
 
 
 \begin{resumo}
 \lipsum[1]
 \end{resumo}
 
-\noindent\textbf{Palavras-chave:} key1, key2, key3
+\begin{palavraschave}
+    chave1, chave2, chave3, ...
+\end{palavraschave}
 
 \vspace{0.5cm}
 \begin{abstract}
 \lipsum[1]
 \end{abstract}
 
-\noindent\textbf{Keywords:} key1, key2, key3
+\begin{keywords}
+    key1, key2, key3, ...
+\end{keywords}
 
 \section{Introdução}
 Este é um modelo de documento que segue as especificações solicitadas. O texto está formatado com fonte tamanho 12, espaçamento entre linhas de 1,5 cm, sem espaçamento entre parágrafos. Exemplo de citação \cite{teste2023}.
@@ -48,7 +58,7 @@ Esta é uma citação longa que deve ser formatada em espaço simples de entreli
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{img1.jpg}
+    \includegraphics[width=0.5\linewidth]{img/img.jpg}
     \caption{Descrição}
     \label{fig:enter-label}
 \end{figure}
@@ -59,6 +69,5 @@ Esta é uma citação longa que deve ser formatada em espaço simples de entreli
 % Referências bibliográficas
 \bibliographystyle{abntex2-alf}  % Estilo autor-data da ABNT
 \bibliography{ref}  % Arquivo .bib contendo as referências
-
 
 \end{document}
