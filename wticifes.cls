@@ -18,11 +18,10 @@
 % ---
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{helvet}
+\RequirePackage[scaled]{helvet}
 \RequirePackage{microtype}
 \RequirePackage{color}
 \RequirePackage{indentfirst}
-\RequirePackage[english,brazil]{babel}
 
 % Configuração de fontes
 \renewcommand{\familydefault}{\sfdefault}
