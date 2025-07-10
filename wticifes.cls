@@ -209,27 +209,6 @@
 {}
 []
 
-% --- 
-% Configuração do título e subtítulo
-% ---
-\makeatletter
-\renewcommand{\maketitle}{%
-  \begin{center}
-    \fontsize{12}{14}\bfseries\selectfont
-    \@title
-  \end{center}
-  \vspace{0.5cm}
-  \begin{flushright}
-    \textbf{Nome do Autor 1}\textsuperscript{1} \\
-    \textbf{Nome do Autor 2}\textsuperscript{2} \\
-    \textbf{Nome do Autor 3}\textsuperscript{3}
-  \end{flushright}
-  \footnotetext[1]{autor1@email.com}
-  \footnotetext[2]{autor2@email.com}
-  \footnotetext[3]{autor3@email.com}
-  \vspace{1cm}
-}
-\makeatother
 \titleformat{\subsubsection}
 {\normalfont\fontsize{12}{14}\bfseries\selectfont}
 {\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }
@@ -308,6 +287,37 @@
   \endgroup
 }
 
+% ---
+% Títulos e autores
+% ---
+% Os nomes dos autores deverão ser alinhados à direita em fonte 12 pontos, negrito, um por linha e com 12 pontos de espaço após o título
+\makeatletter
+% Redefinição do \maketitle
+\renewcommand{\maketitle}[6]{%
+  \begin{center}
+    \fontsize{12}{14}\bfseries\selectfont
+    \@title
+  \end{center}
+  \vspace{0.5cm}
+  \begin{flushright}
+    \bfseries
+    #1\textsuperscript{1} \\
+    #3\textsuperscript{2} \\
+    #5\textsuperscript{3}
+    % Adicionar ou remover linhas aqui conforme
+    % quantidade de autores, mantendo exatamente
+    % esse mesmo padrão
+    % TODO: automatizar
+  \end{flushright}
+  \footnotetext[1]{#2}
+  \footnotetext[2]{#4}
+  \footnotetext[3]{#6}
+  % Adicionar ou remover linhas aqui conforme quantidade
+  % de autores, mantendo exatamente esse mesmo padrão
+  % TODO: automatizar
+  \vspace{1cm}
+}
+\makeatother
 
 % Configuração padrão para o documento
 \AtBeginDocument{
