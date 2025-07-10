@@ -8,12 +8,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wticifes2025}[2025/04/25 Template para artigos do WTICIFES 2025]
 
-% Opções da classe
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
-\ProcessOptions\relax
+% ------------------------------------------------
+% A fonte principal deverá ser Arial, tamanho nominal 12 pontos, o tamanho dom papel deve ser a4
 
-% Carrega a classe base
-\LoadClass[12pt,a4paper,oneside]{abntex2}
+\LoadClass[12pt, a4paper, oneside, brazil, english]{abntex2}
 
 % ---
 % Pacotes de fonte e codificação
