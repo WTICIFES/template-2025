@@ -92,6 +92,49 @@
 
 \lstset{style=mystyle}
 
+% --- Listagem de código (usando minted) ---
+\RequirePackage{minted}
+\RequirePackage{xcolor}
+
+% AutoHotkey language definition
+\newminted{autohotkey}{
+% Language keywords
+  keywords={
+    if, else, return, for, while, loop, break, continue,
+    goto, gosub, global, local, static,
+    Send, Sleep, MsgBox, SetTitleMatchMode, WinActivate,
+    WinWaitActive, Gui, GuiControl, ControlGetFocus
+  },
+% Style options
+  style=mystyle,
+  bgcolor=backcolour,
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+% Language specific
+  sensitive=false,
+  alsoletter={\"},
+  alsoletter={'}
+}
+
+% For inline code
+\newmintinline{autohotkey}{
+  style=mystyle,
+  breaklines=true,
+  breakatwhitespace=false
+}
 
 % ---
 % URLs e referências
