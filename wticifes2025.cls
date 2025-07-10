@@ -1,4 +1,4 @@
-% wticifes.cls
+% wticifes2025.cls
 % TEMPLATE DE ARTIGO CIENTÍFICO - WTICIFES 2025
 % Desenvolvido por Walfran Araújo - UNIFESP adaptado do modelo canônico para artigo científico - ABNT
 % Refatorado com IA Generativa
