@@ -180,23 +180,34 @@
 % ---
 % Configuração de seções (títulos)
 % ---
-\setcounter{secnumdepth}{-1} % Remove a numeração das seções
+\RequirePackage{titlesec}
+% Os títulos das seções devem estar em negrito, 13 pontos, alinhados à esquerda. Deve haver 12 pontos extras de espaço antes de cada título. A numeração das seções é opcional. O primeiro parágrafo de cada seção não deve ser recuado, enquanto as primeiras linhas dos parágrafos subsequentes devem ser recuadas em 1,27 cm.
+% \parindent 0cm
+% \titleformat{\section}
+%    {\normalfont\fontsize{12}{14.4}\bfseries}{}{0em}{}
+% \titlespacing*{\section}{0pt}{2\baselineskip}{\baselineskip}
+
+\setcounter{secnumdepth}{2}
 \titleformat{\section}
-  {\normalfont\fontsize{12}{14}\bfseries\selectfont}
-  {}
-  {0pt}
-  {}
-  []
+{\normalfont\fontsize{12}{14}\bfseries\selectfont}
+{\arabic{section}. }
+{0pt}
+{}
+[]
 
 \titlespacing*{\section}
-  {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
+% Os títulos das subseções devem estar em negrito, 12pt, alinhados à esquerda.
+% \titleformat{\subsection}
+%    {\normalfont\fontsize{12}{14.4}\bfseries}{\thesubsection}{1em}{}
+% \titlespacing*{\section}{0pt}{2\baselineskip}{\baselineskip}
 \titleformat{\subsection}
-  {\normalfont\fontsize{12}{14}\bfseries\selectfont}
-  {}
-  {0pt}
-  {}
-  []
+{\normalfont\fontsize{12}{14}\bfseries\selectfont}
+{\arabic{section}.\arabic{subsection}. }
+{0pt}
+{}
+[]
 
 % --- 
 % Configuração do título e subtítulo
@@ -219,6 +230,12 @@
   \vspace{1cm}
 }
 \makeatother
+\titleformat{\subsubsection}
+{\normalfont\fontsize{12}{14}\bfseries\selectfont}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }
+{0pt}
+{}
+[]
 
 % ---
 % Resumo e Abstract
