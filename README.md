@@ -6,6 +6,10 @@ Este repositório contém um template LaTeX para artigos científicos seguindo a
 
 O template foi adaptado do modelo canônico para artigo científico da ABNT (Associação Brasileira de Normas Técnicas), com refatoração assistida por IA Generativa. O modelo segue as normas acadêmicas brasileiras para publicações científicas.
 
+## Pontos de Atenção
+
+Esse projeto foi corretamente compilado no OverLeaf.com, usando o compilador LuaLaTeX. Dependendo do compilador usado pode ser necessária a instalação do pacote abntex2 em separado. 
+
 ## Estrutura do Projeto
 
 - `main.tex`: Arquivo principal, onde deve escarver seu artigo
