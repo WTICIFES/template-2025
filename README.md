@@ -15,7 +15,7 @@ Esse projeto foi corretamente compilado no OverLeaf.com, usando o compilador Lua
 - `main.tex`: Arquivo principal, onde deve escarver seu artigo
 - `ref.bib`: Arquivo BibTeX contendo as referências bibliográficas
 - `background.png`: Imagem de fundo utilizada em todas as páginas do documento
-- `wticifes.cls`: O template em si
+- `wticifes2025.cls`: O template em si
 
 ## Características 
 > As recomendações do Comitê de Comunicação Científica do WTICIFES 2025 estão disponíveis em https://wticifes.com.br/2025/submissao-trabalhos/
