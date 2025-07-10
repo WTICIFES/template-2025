@@ -75,6 +75,14 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 - Remoção da numeração de section e subsection
 - Nomes dos autores em negrito
 
+### 26/04/2025
+- Correção do formato das citações usando o pacote abntex2
+- Organização de imagens em pasta separada
+
+### 10/07/2025
+- Dados dos autores no main.tex
+- Dicas de compilação
+
 ## Contribuições 
 
 - **Pull Requests**: Contribua com melhorias através de pull requests. Certifique-se de documentar as alterações propostas.
