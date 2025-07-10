@@ -85,6 +85,7 @@ As referências devem ser adicionadas no arquivo `referencias.bib`, seguindo o p
 
 - **Walfran Araújo** (UNIFESP) – Adaptação para WTICIFES 2025
 - **Alexsandro Cardoso Carvalho** (UNIFESP) – Organização
+- **André de Freitas Smaira** (UFSCar) - Detalhes finais
 - Modelo Canônico ABNT2 para artigo científico
 
 
