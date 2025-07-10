@@ -10,7 +10,6 @@
 
 % ------------------------------------------------
 % A fonte principal deverá ser Arial, tamanho nominal 12 pontos, o tamanho dom papel deve ser a4
-
 \LoadClass[12pt, a4paper, oneside, brazil, english]{abntex2}
 
 % ---
@@ -146,13 +145,13 @@
 % ---
 % Configurações de layout
 % ---
-\RequirePackage{geometry}
-\geometry{a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm}
+\RequirePackage[a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm, headsep=0.5cm]{geometry}
 \RequirePackage{titlesec}
 \RequirePackage{lipsum}
 \RequirePackage{eso-pic}
 
 % Configurações de parágrafo
+% Não deverá ter espaçamento entre parágrafos, ou seja, deverá ser simples.
 \setlength{\parindent}{1.5cm}
 \setlength{\parskip}{0pt}
 \setlength{\baselineskip}{1.5cm}
@@ -221,20 +220,22 @@
 }
 \makeatother
 
-% --- 
+% ---
 % Resumo e Abstract
 % ---
+% O resumo e o “resumo” (se for o caso) deverão estar em fonte Times, tamanho 12, com recuo de 0,8cm em ambos os lados. A palavra Resumo deverá ser escrita em negrito e deverão preceder o texto.
+%
 \renewenvironment{resumo}{%
   \noindent\fontsize{12}{14}\sffamily\bfseries Resumo\\%
   \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
-}{%
+  }{%
   \par\setlength{\parindent}{1.5cm}%
 }
 
 \renewenvironment{abstract}{%
   \noindent\fontsize{12}{14}\sffamily\bfseries Abstract\\%
   \noindent\fontsize{12}{14}\sffamily\mdseries\setlength{\parindent}{0pt}%
-}{%
+  }{%
   \par\setlength{\parindent}{1.5cm}%
 }
 
@@ -267,7 +268,7 @@
 }
 
 % --- Automático para iniciar numeração de página (equivalente a \textual) ---
-\RequirePackage{etoolbox} 
+\RequirePackage{etoolbox}
 \newbool{abntex@textual@foi chamado}
 \boolfalse{abntex@textual@foi chamado}
 \newcommand{\abntex@chamartextualsepreciso}{%
