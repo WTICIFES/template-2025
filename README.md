@@ -8,9 +8,10 @@ O template foi adaptado do modelo canônico para artigo científico da ABNT (Ass
 
 ## Estrutura do Projeto
 
-- `main.tex`: Arquivo principal do template LaTeX
+- `main.tex`: Arquivo principal, onde deve escarver seu artigo
 - `ref.bib`: Arquivo BibTeX contendo as referências bibliográficas
 - `background.png`: Imagem de fundo utilizada em todas as páginas do documento
+- `wticifes.cls`: O template em si
 
 ## Características 
 > As recomendações do Comitê de Comunicação Científica do WTICIFES 2025 estão disponíveis em https://wticifes.com.br/2025/submissao-trabalhos/
