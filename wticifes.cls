@@ -308,8 +308,6 @@
   \endgroup
 }
 
-% Renomeia o título das referências para português
-\renewcommand{\refname}{Referências}
 
 % Configuração padrão para o documento
 \AtBeginDocument{
