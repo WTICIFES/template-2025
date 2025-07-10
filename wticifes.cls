@@ -319,7 +319,9 @@
 }
 \makeatother
 
-% Configuração padrão para o documento
+% Espaçamento 1,5 para o texto principal
 \AtBeginDocument{
   \OnehalfSpacing % Espaçamento 1,5 para o texto principal
 }
+
+\endinput
