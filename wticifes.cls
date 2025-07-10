@@ -27,17 +27,6 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 % ---
-% URLs 
-% ---
-\RequirePackage{url}
-\RequirePackage{hyperref}
-
-% ---
-% Pacotes de citações
-% ---
-\RequirePackage[brazilian,alf]{abntex2cite}
-
-% ---
 % Pacotes para figuras e gráficos
 % ---
 \RequirePackage{graphicx}
@@ -102,6 +91,14 @@
 }
 
 \lstset{style=mystyle}
+
+
+% ---
+% URLs e referências
+% ---
+\RequirePackage{url}
+\RequirePackage[brazilian,alf]{abntex2cite}
+\RequirePackage{hyperref}
 
 % ---
 % Configurações de layout
